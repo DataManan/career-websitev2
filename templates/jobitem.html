@@ -1,13 +1,17 @@
 <div class="row">
 <div class = "col-6 text-start">
   <h4 style="color:#5B5B66;">
-    Job Title : {{job["ROLE"]}}
+    Job Title : {{job["title"]}}
   </h4>
   <div>
-    Location : {{job["LOCATION"]}}
+    Location : {{job["location"]}}
   </div>
   <div>
-    {{job["PAY"]}}
+    {%if job["salary"] == None%}
+      {{"Not Specified"}}
+    {%else%}
+      {{job["salary"]}}
+    {%endif%}
   </div>
 </div>
 <div class="col">
